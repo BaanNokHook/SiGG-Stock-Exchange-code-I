@@ -76,7 +76,10 @@ namespace SiGG_Stock_Exchange_code_I.Controllers
 
         })
             .ToArray();
+
+        
     }
+
 
     
 
