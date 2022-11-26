@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Authorization;
+=======
+>>>>>>> main
 
 namespace SiGG_Stock_Exchange_code_I.Controllers
 {
@@ -9,17 +12,25 @@ namespace SiGG_Stock_Exchange_code_I.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
+<<<<<<< HEAD
         "Freezing", "Bracing"
     };
 
         private readonly ILogger<Stock_Exchange> _logger;
         private object _userService;
+=======
+        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+    };
+
+        private readonly ILogger<Stock_Exchange> _logger;
+>>>>>>> main
 
         public Stock_Exchange(ILogger<Stock_Exchange> logger)
         {
             _logger = logger;
         }
 
+<<<<<<< HEAD
    
         [HttpGet(Name = "GetStockExchange")]
         public IEnumerable<Stock_Exchange_code_I> GetType() => Enumerable.Range(1, 5).Select(index => new Stock_Exchange_code_I
@@ -85,3 +96,18 @@ namespace SiGG_Stock_Exchange_code_I.Controllers
 
 }
 
+=======
+        [HttpGet(Name = "GetStockExchange")]
+        public IEnumerable<Stock_Exchange_code_I> Get()
+        {
+            return Enumerable.Range(1, 5).Select(index => new Stock_Exchange_code_I
+            {
+                Date = DateTime.Now.AddDays(index),
+                TemperatureC = Random.Shared.Next(-20, 55),
+                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+            })
+            .ToArray();
+        }
+    }
+}
+>>>>>>> main
